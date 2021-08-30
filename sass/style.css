@@ -682,6 +682,7 @@ html {
   font-weight: 400;
 }
 .contact-form__message {
+  resize: none;
   width: 100%;
   outline: none;
   border: none;
