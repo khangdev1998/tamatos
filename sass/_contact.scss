@@ -1,0 +1,169 @@
+.contact {
+  --wh-social-icon: 44px;
+  background: linear-gradient(to bottom, rgba(#43484f, 0.8), rgba(#43484f, 0.8)),
+    url("../images/contact-bg.jpg") no-repeat center / cover;
+  background-attachment: fixed;
+  padding: 100px 0;
+  text-align: center;
+  &-form {
+    padding-top: 90px;
+    max-width: 835px;
+    margin: 0 auto;
+  }
+  &-form__row {
+    @include flexbox(space-between);
+    margin-left: -14px;
+    margin-right: -14px;
+    &:nth-child(2) {
+      margin-top: 30px;
+    }
+  }
+  &-form__col {
+    padding: 0 14px;
+    width: 50%;
+  }
+  &-form__col--full {
+    width: 100%;
+  }
+  &-form__input {
+    width: 100%;
+    padding: 15px 20px;
+    outline: none;
+    border: none;
+    border-radius: 12px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    &::-webkit-input-placeholder {
+      font-size: 16px;
+      font-weight: 400;
+    }
+    &::-moz-placeholder {
+      font-size: 16px;
+      font-weight: 400;
+    }
+    &:-ms-input-placeholder {
+      font-size: 16px;
+      font-weight: 400;
+    }
+    &::-ms-input-placeholder {
+      font-size: 16px;
+      font-weight: 400;
+    }
+    &::placeholder {
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+  &-form__message {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 12px;
+    padding: 15px 20px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    &::-webkit-input-placeholder {
+      font-size: 16px;
+      font-weight: 400;
+    }
+    &::-moz-placeholder {
+      font-size: 16px;
+      font-weight: 400;
+    }
+    &:-ms-input-placeholder {
+      font-size: 16px;
+      font-weight: 400;
+    }
+    &::-ms-input-placeholder {
+      font-size: 16px;
+      font-weight: 400;
+    }
+    &::placeholder {
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+  &-wrapper {
+    @include flexbox(space-between);
+    padding-top: 30px;
+  }
+  &-social__icon {
+    background: transparent;
+    border-radius: 50%;
+    font-size: 24px;
+    color: var(--text-color);
+    @include size(var(--wh-social-icon));
+    line-height: var(--wh-social-icon) !important;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);
+    & + & {
+      margin-left: 18px;
+    }
+    &--facebook {
+      background: #205b9f;
+    }
+    &--twitter {
+      background: #00ace3;
+    }
+    &--google {
+      background: #ff3921;
+    }
+    &--instagram {
+      background: radial-gradient(
+        circle at 30% 107%,
+        #fdf497 0%,
+        #fdf497 5%,
+        #fd5949 45%,
+        #d6249f 60%,
+        #285aeb 90%
+      );
+    }
+    &--behance {
+      background: #009bd5;
+    }
+  }
+  @include maxWidth(1023px) {
+    background-attachment: initial;
+  }
+  @include maxWidth(767px) {
+    --wh-social-icon: 40px;
+    padding: 60px 0;
+    &-form {
+      padding-top: 50px;
+    }
+    &-form__row {
+      @include flexbox(flex-start, column);
+     &:nth-child(2) {
+       margin-top: 0;
+     }
+    }
+    &-form__col {
+      width: 100%;
+      :first-child {
+        margin-bottom: 20px;
+      }
+    }
+    &-wrapper {
+      @include flexbox(flex-start, column);
+      padding-top: 0;
+    }
+    &-social {
+      margin-top: 25px;
+    }
+    &-social__icon {
+      font-size: 16.5px;
+      & + & {
+        margin-left: 15px;
+      }
+    }
+  }
+  @include maxWidth(374px) {
+    --wh-social-icon: 35px;
+    &-social__icon {
+     & + & {
+      margin-left: 12px;
+     }
+    }
+  }
+}

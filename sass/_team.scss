@@ -1,0 +1,99 @@
+.team {
+  padding: 100px 0;
+  text-align: center;
+  &-list {
+    padding-top: 129px;
+    @include flexbox(space-between);
+  }
+  &-list__items {
+    width: calc(25% - 30px);
+    -webkit-filter: grayscale(90%);
+    filter: grayscale(90%);
+    transition: linear 0.25s;
+    cursor: pointer;
+    &:hover {
+      transform: translateY(-60px);
+      -webkit-filter: grayscale(0%);
+      filter: grayscale(0%);
+    }
+  }
+  &-list__image {
+    border-radius: 12px;
+    @include size(100%, 285px);
+    -o-object-fit: cover;
+       object-fit: cover;
+    vertical-align: middle;
+    margin-bottom: 30px;
+  }
+  &-list__name {
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--text-dark);
+    @include lineClamp();
+  }
+  &-list__desc {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
+  &-social {
+    padding: 18px 0;
+  }
+  &-social__icon {
+    --team-social-icon: 28px;
+    font-size: 14px;
+    color: var(--text-color);
+    border-radius: 50%;
+    @include size(var(--team-social-icon));
+    line-height: var(--team-social-icon) !important;
+    background: transparent;
+    &--facebook {
+      background: #205b9f;
+    }
+    &--twitter {
+      background: #00ace3;
+    }
+    &--google {
+      background: #ff3921;
+    }
+    & + & {
+      margin-left: 12px;
+    }
+  }
+  @include maxWidth(1279px) {
+    &-list__items {
+      -webkit-filter: unset;
+              filter: unset;
+    }
+  }
+  @include maxWidth(1023px) {
+    padding: 80px 0;
+    &-list {
+      @include flexbox(space-between, $wrap: wrap);
+      padding-top: 50px;
+      margin-bottom: -40px;
+    }
+    &-list__items {
+      width: calc(50% - 10px);
+      margin-bottom: 40px;
+    }
+    &-list__image {
+      height: 400px;
+    }
+  }
+  @include maxWidth(767px) {
+    &-list {
+      @include scrollSnap();
+    }
+    &-list__items {
+      width: 100%;
+    }
+  }
+  @include maxWidth(320px) {
+    &-list__image {
+      height: 350px;
+    }
+  }
+}

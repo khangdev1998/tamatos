@@ -1,0 +1,49 @@
+.quote {
+  margin-top: 100px;
+  padding: 100px 0;
+  background: linear-gradient(to bottom, rgba(#43484f, 0.8), rgba(#43484f, 0.8)),
+    url("../images/quote-bg.jpg") no-repeat center / cover;
+  &-wrapper {
+    @include flexbox(space-between, $align-items: center);
+  }
+  &-icon {
+    color: #717579;
+    font-size: 40px;
+    cursor: pointer;
+  }
+  &-content {
+    text-align: center;
+    color: var(--text-color);
+    max-width: 810px;
+    word-break: break-all;
+  }
+  &-content__face {
+    @include size(125px, 118px);
+    border-radius: 50%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    vertical-align: middle;
+    margin-bottom: 36px;
+  }
+  &-content__intro {
+    padding-bottom: 42px;
+    font-size: 26px;
+    font-style: italic;
+    line-height: 1.6;
+  }
+  &-content__name {
+    font-weight: 600;
+    font-size: 18px;
+  }
+  @include maxWidth(1023px) {
+    margin-top: 10px;
+    &-icon {
+      display: none !important;
+    }
+  }
+  @include maxWidth(767px) {
+    &-content__intro {
+      font-size: 20px;
+    }
+  }
+}
